@@ -14,14 +14,11 @@ jlabel
 */
     public static void main (String args[]) {
         
-        int id1;
-        int id2;
-        int id3;
-        String start;
+     
 
         final Integer [] index = {1, 2, 3, 4, 5}; 
-        
-
+   
+       
         JFrame frame = new JFrame();
 
         frame.setTitle("Enigma GUI");
@@ -53,12 +50,26 @@ jlabel
         north.add(decryptBut);
 
 
-
-
         center.add(new JLabel("Input "));
         center.add(input);
         south.add(new JLabel("Output "));
         south.add(output);
+
+
+        innerDrop.addActionListener((e) -> {
+            int id1 = innerDrop.getSelectedIndex();
+        });
+        middleDrop.addActionListener((e) -> {
+            int id2 = middleDrop.getSelectedIndex();
+        });
+        outerDrop.addActionListener((e) -> {
+            int id3 = outerDrop.getSelectedIndex();
+        });
+
+        init.addActionListener((e) -> {
+            String start = init.getText();
+        });
+
         
         frame.setSize(700, 300);
         frame.setLocation(100, 200);
