@@ -55,7 +55,7 @@ jlabel
         south.add(new JLabel("Output "));
         south.add(output);
 
-
+        /* 
         innerDrop.addActionListener((e) -> {
             int id1 = innerDrop.getSelectedIndex();
         });
@@ -69,7 +69,42 @@ jlabel
         init.addActionListener((e) -> {
             String start = init.getText();
         });
+        */
 
+        // create enigma
+
+
+        encryptBut.addActionListener((e) -> {
+            int id1 = innerDrop.getSelectedIndex() + 1;
+            int id2 = middleDrop.getSelectedIndex() + 1;
+            int id3 = outerDrop.getSelectedIndex() + 1;
+            String start = init.getText();
+            Enigma enigma = new Enigma(id1, id2, id3, start);
+            //DEBUG
+            System.out.println(start);
+            System.out.println(id1);
+            System.out.println(id2);
+            System.out.println(id3);
+            enigma.encrypt(input.getText());
+
+        });
+        
+
+        decryptBut.addActionListener((e) -> {
+            //enigma.decrypt(gettextfieldinput);
+            int id1 = innerDrop.getSelectedIndex() + 1;
+            int id2 = middleDrop.getSelectedIndex() + 1;
+            int id3 = outerDrop.getSelectedIndex() + 1;
+            String start = init.getText();
+            Enigma enigma = new Enigma(id1, id2, id3, start);
+            //DEBUG
+            System.out.println(start);
+            System.out.println(id1);
+            System.out.println(id2);
+            System.out.println(id3);
+            output.setText(enigma.decrypt(input.getText()));
+        });
+        
         
         frame.setSize(700, 300);
         frame.setLocation(100, 200);
@@ -77,5 +112,10 @@ jlabel
         frame.setVisible(true);
 
     }   
+
+    public void validateInputs(){
+        // 
+
+    }
 
 }
