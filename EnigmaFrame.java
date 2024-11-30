@@ -85,7 +85,7 @@ jlabel
             System.out.println(id1);
             System.out.println(id2);
             System.out.println(id3);
-            enigma.encrypt(input.getText());
+            output.setText(enigma.encrypt(input.getText()));
 
         });
         
